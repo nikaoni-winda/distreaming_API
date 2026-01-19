@@ -26,8 +26,8 @@ return new class extends Migration {
             $table->unique(['user_id', 'movie_id']);
         });
 
-        // Add CHECK constraint for rating (1-10)
-        DB::statement('ALTER TABLE reviews ADD CONSTRAINT check_rating CHECK (rating BETWEEN 1 AND 10)');
+        // Note: CHECK constraint for rating (1-10) is handled in the Review model validation
+        // SQLite doesn't support ALTER TABLE ADD CONSTRAINT
     }
 
     /**
