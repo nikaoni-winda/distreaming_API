@@ -252,6 +252,15 @@ class MovieController extends Controller
                 ], 404);
             }
 
+            // Detach related records first to avoid foreign key constraint errors
+            $movie->genres()->detach();
+            $movie->actors()->detach();
+
+            // Delete related reviews and watch history
+            $movie->reviews()->delete();
+            $movie->watchHistory()->delete();
+
+            // Now delete the movie
             $movie->delete();
 
             return response()->json([

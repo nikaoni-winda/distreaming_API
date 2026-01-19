@@ -52,6 +52,11 @@ class Movie extends Model
         return $this->hasMany(Review::class, 'movie_id', 'movie_id');
     }
 
+    public function watchHistory()
+    {
+        return $this->hasMany(WatchHistory::class, 'movie_id', 'movie_id');
+    }
+
     // Accessor for rating_class
     public function getRatingClassAttribute()
     {
