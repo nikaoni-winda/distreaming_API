@@ -1,8 +1,13 @@
 [phases.setup]
-nixPkgs = ["php82", "php82Extensions.dom", "php82Extensions.fileinfo", "php82Extensions.mbstring", "php82Extensions.openssl", "php82Extensions.pdo", "php82Extensions.pdo_mysql", "php82Extensions.tokenizer", "php82Extensions.ctype", "composer"]
+nixPkgs = ["php82", "php82Extensions.dom", "php82Extensions.fileinfo", "php82Extensions.mbstring", "php82Extensions.openssl", "php82Extensions.pdo", "php82Extensions.pdo_mysql", "php82Extensions.tokenizer", "php82Extensions.ctype", "composer", "nodejs_20", "npm-9_x"]
 
 [phases.build]
-cmds = ["composer install --no-dev --optimize-autoloader --no-interaction", "php artisan migrate --force"]
+cmds = [
+    "composer install --no-dev --optimize-autoloader --no-interaction",
+    "npm install",
+    "npm run build",
+    "php artisan migrate --force"
+]
 
 [start]
 cmd = "php artisan serve --host=0.0.0.0 --port=$PORT"
