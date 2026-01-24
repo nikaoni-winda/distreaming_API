@@ -126,3 +126,10 @@ Contributions are welcome! Please feel free to submit a Pull Request.
 ## 📄 License
 
 This project is open-sourced software licensed under the [MIT license](https://opensource.org/licenses/MIT).
+
+## 🔗 Project Links
+
+-   **Backend Repo (Laravel)**: [https://github.com/nikaoni-winda/distreaming_API](https://github.com/nikaoni-winda/distreaming_API)
+-   **Backend Deploy**: [https://distreamingapi-production.up.railway.app](https://distreamingapi-production.up.railway.app)
+-   **Frontend Repo (React)**: [https://github.com/nikaoni-winda/distreaming_react](https://github.com/nikaoni-winda/distreaming_react)
+-   **Frontend Deploy**: [https://distreaming-react.vercel.app/](https://distreaming-react.vercel.app/)
